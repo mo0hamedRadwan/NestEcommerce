@@ -5,7 +5,7 @@ import router, {
   refresh,
 } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { resetPasswordAtom } from "../atoms";
 import {
   forgetPassword,
@@ -168,26 +168,4 @@ export function useResetPassword() {
   };
 
   return resetPasswordSubmit;
-}
-
-/**********************************************************/
-/**************** Custom Hook *****************************/
-/**********************************************************/
-
-export function useWindowScroll() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const updatePosition = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    window.addEventListener("scroll", updatePosition);
-
-    return () => {
-      window.removeEventListener("scroll", updatePosition);
-    };
-  }, []);
-
-  return scrollPosition;
 }

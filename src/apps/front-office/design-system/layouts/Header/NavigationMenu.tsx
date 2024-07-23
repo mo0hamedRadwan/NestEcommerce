@@ -3,6 +3,7 @@ import logo from "shared/assets/images/logo.svg";
 import { Input } from "shared/components/ui/input";
 import { Separator } from "shared/components/ui/separator";
 import { bottomHeaderNavbarItems } from "./constant/bottomHeaderData";
+import { socialMediaLinks, websiteInfo } from "./constant/middleHeaderData";
 
 type NavigationMenuType = {
   toggleSidebar: () => void;
@@ -24,7 +25,7 @@ const NavigationMenu = ({ toggleSidebar }: NavigationMenuType) => {
         <div className="mt-2 p-5">
           <Input
             placeholder="search for items"
-            className="p-5 bg-gray-200 text-black placeholder:text-black text-base border-none rounded-lg focus-visible:ring-0"
+            className="p-5 bg-slate-200 text-black placeholder:text-black text-base border-none rounded-lg focus-visible:ring-0"
           />
         </div>
         <ul className="flex flex-col gap-y-3 p-5">
@@ -41,38 +42,26 @@ const NavigationMenu = ({ toggleSidebar }: NavigationMenuType) => {
             <Separator />
           </li>
         </ul>
-        <ul className="p-5 flex flex-col gap-y-2 border border-gray-200 font-bold">
-          <li className="flex items-center gap-x-2">
-            <i className="bx bx-location-plus text-main-500"></i>
-            <span>location</span>
-          </li>
-          <li className="flex items-center gap-x-2">
-            <i className="bx bx-user text-main-500"></i>
-            <span>Login in / Sign up</span>
-          </li>
-          <li className="flex items-center gap-x-2">
-            <i className="bx bxs-phone text-main-500"></i>
-            <span>(+01)-2345-6789</span>
-          </li>
+        <ul className="p-5 flex flex-col gap-y-2 border border-slate-200 font-bold">
+          {websiteInfo.map(info => (
+            <li key={info.name} className="flex items-center gap-x-2">
+              <i className={`bx bx-${info.icon} text-main-500`}></i>
+              <span>{info.name}</span>
+            </li>
+          ))}
         </ul>
         <div className="mt-5">
           <p className="font-bold">Follow us:</p>
           <ul className="flex items-center gap-x-2 mt-5">
-            <li className="w-8 h-8 flex justify-center items-center bg-main-500 text-white rounded-full">
-              <i className="bx bxl-facebook"></i>
-            </li>
-            <li className="w-8 h-8 flex justify-center items-center bg-main-500 text-white rounded-full">
-              <i className="bx bxl-twitter"></i>
-            </li>
-            <li className="w-8 h-8 flex justify-center items-center bg-main-500 text-white rounded-full">
-              <i className="bx bxl-instagram"></i>
-            </li>
-            <li className="w-8 h-8 flex justify-center items-center bg-main-500 text-white rounded-full">
-              <i className="bx bxl-pinterest"></i>
-            </li>
-            <li className="w-8 h-8 flex justify-center items-center bg-main-500 text-white rounded-full">
-              <i className="bx bxl-youtube"></i>
-            </li>
+            {socialMediaLinks.map(socialLink => (
+              <li
+                key={socialLink.name}
+                className="w-8 h-8 flex justify-center items-center bg-main-500 text-white rounded-full">
+                <Link to={socialLink.link}>
+                  <i className={`bx bxl-${socialLink.name}`}></i>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="my-10">

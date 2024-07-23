@@ -1,19 +1,35 @@
 import slider1 from "shared/assets/images/carousel/slider-1.png";
 import slider2 from "shared/assets/images/carousel/slider-2.png";
-
-export const sliderImages = [slider1, slider2];
+import slider3 from "shared/assets/images/carousel/slider-3.png";
+import slider4 from "shared/assets/images/carousel/slider-4.png";
 
 export const CarouselSlidersData = [
   {
-    img: sliderImages[0],
+    img: slider1,
     header1: "Don’t miss amazing",
     header2: "grocery deals",
     text: "Sign up for the daily newsletter",
+    dir: "left",
   },
   {
-    img: sliderImages[1],
+    img: slider2,
     header1: "Fresh Vegetables",
     header2: "Big discount",
     text: "Save up to 50% off on your first order",
+    dir: "left",
+  },
+  {
+    img: slider3,
+    header1: "Fresh Vegetables With",
+    header2: "Big discount",
+    text: "Save up to 50% off on your first order",
+    dir: "left",
+  },
+  {
+    img: slider4,
+    header1: "Fresh Milk",
+    header2: "Big discount",
+    text: "Save up to 50% off on your first order",
+    dir: "left",
   },
 ];

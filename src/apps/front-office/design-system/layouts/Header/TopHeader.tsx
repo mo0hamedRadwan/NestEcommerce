@@ -4,11 +4,13 @@ import { topHeaderLanguages, topHeaderLinks } from "./constant/topHeaderData";
 
 const TopHeader = () => {
   return (
-    <div className="container hidden md:flex md:justify-between items-center py-2 text-sm lg:bg-white md:bg-main-500 lg:text-black md:text-white">
+    <div className="container hidden md:flex md:justify-between items-center py-2 text-sm lg:bg-white lg:dark:bg-slate-900 md:bg-main-500 lg:text-black lg:dark:text-slate-100 md:text-white">
       <ul className="hidden lg:flex items-center">
         {topHeaderLinks.map((link, index) => (
           <li key={link.name} className="flex items-center">
-            <Link to={link.href} className="text-gray-700 hover:text-gray-950">
+            <Link
+              to={link.href}
+              className="text-slate-700 dark:text-slate-200 hover:text-slate-950 hover:dark:text-white">
               {link.name}
             </Link>
             {index !== topHeaderLinks.length - 1 && (
@@ -30,7 +32,7 @@ const TopHeader = () => {
           </p>
         </li>
         <li>
-          <select name="" id="">
+          <select className="text-black">
             {topHeaderLanguages.map(lang => (
               <option value={lang.code} key={lang.code}>
                 {lang.name}

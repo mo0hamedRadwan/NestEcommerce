@@ -10,7 +10,7 @@ export type BaseLayoutProps = {
  */
 export default function BaseLayout({ children }: BaseLayoutProps) {
   return (
-    <div className="font-sans">
+    <div className="font-sans dark:bg-slate-900 dark:text-white">
       <Header />
       <main className="container">{children}</main>
       <Footer />

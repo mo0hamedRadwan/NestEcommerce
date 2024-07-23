@@ -1,6 +1,5 @@
 import { Link } from "@mongez/react-router";
 // import { useState } from "react";
-import { useWindowScroll } from "apps/front-office/account/hooks";
 import { useState } from "react";
 import logo from "shared/assets/images/logo.svg";
 import { Input } from "shared/components/ui/input";
@@ -12,6 +11,7 @@ import {
   SelectValue,
 } from "shared/components/ui/select";
 import { Separator } from "shared/components/ui/separator";
+import { useDarkMode, useWindowScroll } from "../../hooks";
 import {
   MiddleHeaderInputPlacholder,
   MiddleHeaderSelectPlacholder,
@@ -28,6 +28,8 @@ function capitalize(value: string): string {
 const MiddleHeader = () => {
   const windowScroll = useWindowScroll();
   const [openNavMenu, setOpenNavMenu] = useState(false);
+  // const theme = themeAtom.useValue();
+  const { theme, toggleTheme } = useDarkMode();
 
   const toggleSidebar = () => {
     console.log("toggleSidebar");
@@ -36,7 +38,7 @@ const MiddleHeader = () => {
 
   return (
     <div
-      className={`container bg-white w-full flex justify-between items-center py-3 lg:py-7 ${windowScroll >= 25 && "sticky top-0 z-50 lg:relative lg:top-auto lg:z-0"}`}>
+      className={`container bg-white dark:bg-slate-900 w-full flex justify-between items-center py-3 lg:py-7 ${windowScroll >= 25 && "sticky top-0 z-50 lg:relative lg:top-auto lg:z-0"}`}>
       <div className="block lg:hidden text-6xl" onClick={() => toggleSidebar()}>
         <i className="bx bx-menu"></i>
       </div>
@@ -83,7 +85,9 @@ const MiddleHeader = () => {
               </span>
             )}
             <i className={`bx bx-${action.iconName} text-2xl`}></i>
-            <Link to={action.href} className="ml-1 text-slate-500">
+            <Link
+              to={action.href}
+              className="ml-1 text-slate-500 dark:text-slate-100">
               {action.name}
             </Link>
           </li>
@@ -91,6 +95,15 @@ const MiddleHeader = () => {
       </ul>
 
       <ul className="lg:hidden flex justify-center items-center gap-x-5">
+        <li
+          className="flex justify-center items-center rounded-full text-3xl ml-5 2xl:mx-5 2xl:mr-16 w-12 h-12 bg-main-500 text-white cursor-pointer"
+          onClick={() => toggleTheme()}>
+          {theme === "light" ? (
+            <i className="bx bxs-moon"></i>
+          ) : (
+            <i className="bx bxs-sun"></i>
+          )}
+        </li>
         {navbarIcons.map(icon => (
           <li key={icon.icon}>
             <Link to={icon.link} className="relative">
