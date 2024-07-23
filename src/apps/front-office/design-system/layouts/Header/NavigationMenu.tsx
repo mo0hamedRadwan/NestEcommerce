@@ -12,11 +12,11 @@ type NavigationMenuType = {
 const NavigationMenu = ({ toggleSidebar }: NavigationMenuType) => {
   return (
     <div className="absolute top-0 left-0 bottom-0 right-0 z-10 bg-black bg-opacity-15">
-      <div className="w-1/2 h-full bg-white px-5">
+      <div className="w-1/2 h-full bg-white dark:bg-slate-900 px-5">
         <div className="flex justify-between items-center p-5">
           <img src={logo} alt="nest logo" className="w-[140px] h-[44px]" />
           <span
-            className="w-8 h-8 flex justify-center items-center rounded-full bg-main-200"
+            className="w-8 h-8 flex justify-center items-center rounded-full bg-main-200 dark:bg-main-500"
             onClick={() => toggleSidebar()}>
             <i className="bx bx-x font-bold"></i>
           </span>

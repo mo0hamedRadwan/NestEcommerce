@@ -96,7 +96,7 @@ const MiddleHeader = () => {
 
       <ul className="lg:hidden flex justify-center items-center gap-x-5">
         <li
-          className="flex justify-center items-center rounded-full text-3xl ml-5 2xl:mx-5 2xl:mr-16 w-12 h-12 bg-main-500 text-white cursor-pointer"
+          className="flex justify-center items-center rounded-full text-3xl w-12 h-12 bg-main-500 text-white cursor-pointer"
           onClick={() => toggleTheme()}>
           {theme === "light" ? (
             <i className="bx bxs-moon"></i>

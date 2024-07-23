@@ -22,7 +22,7 @@ const BottomHeader = () => {
           <i className="bx bx-chevron-down"></i>
         </Button>
         <ul className="flex items-center gap-x-6 xl:gap-x-8">
-          <li className="text-base font-bold">
+          <li className="text-base font-bold hover:text-main-700 cursor-pointer">
             <i className="bx bxs-hot text-main-500"></i>
             <span className="ml-2 mr-2 xl:mr-8">Deals</span>
           </li>
