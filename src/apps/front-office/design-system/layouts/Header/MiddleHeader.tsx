@@ -43,8 +43,8 @@ const MiddleHeader = () => {
           </SelectTrigger>
           <SelectContent className="hidden xl:block xl:w-[180px] max-h-[250px] bg-white">
             <Input className="my-1 mx-2 w-[90px] xl:w-[150px] focus-visible:ring-0" />
-            {middleHeaderCategories.map(category => (
-              <SelectItem value={category} key={category}>
+            {middleHeaderCategories.map((category, index) => (
+              <SelectItem value={category} key={category + index}>
                 {/* {category.charAt(0).toUpperCase() + category.slice(1)} */}
                 {capitalize(category)}
               </SelectItem>
