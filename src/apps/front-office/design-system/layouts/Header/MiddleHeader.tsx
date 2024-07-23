@@ -1,6 +1,7 @@
 import { Link } from "@mongez/react-router";
 // import { useState } from "react";
 import { useWindowScroll } from "apps/front-office/account/hooks";
+import { useState } from "react";
 import logo from "shared/assets/images/logo.svg";
 import { Input } from "shared/components/ui/input";
 import {
@@ -16,7 +17,9 @@ import {
   MiddleHeaderSelectPlacholder,
   middleHeaderActions,
   middleHeaderCategories,
+  navbarIcons,
 } from "./constant/middleHeaderData";
+import NavigationMenu from "./NavigationMenu";
 
 function capitalize(value: string): string {
   return value.charAt(0).toUpperCase() + value.slice(1);
@@ -24,12 +27,17 @@ function capitalize(value: string): string {
 
 const MiddleHeader = () => {
   const windowScroll = useWindowScroll();
-  // const [openMenu, setOpenMenu] = useState(false);
+  const [openNavMenu, setOpenNavMenu] = useState(false);
+
+  const toggleSidebar = () => {
+    console.log("toggleSidebar");
+    setOpenNavMenu(!openNavMenu);
+  };
 
   return (
     <div
       className={`container bg-white w-full flex justify-between items-center py-3 lg:py-7 ${windowScroll >= 25 && "sticky top-0 z-50 lg:relative lg:top-auto lg:z-0"}`}>
-      <div className="block lg:hidden text-6xl">
+      <div className="block lg:hidden text-6xl" onClick={() => toggleSidebar()}>
         <i className="bx bx-menu"></i>
       </div>
       <div>
@@ -83,23 +91,19 @@ const MiddleHeader = () => {
       </ul>
 
       <ul className="lg:hidden flex justify-center items-center gap-x-5">
-        <li>
-          <Link to="/wishlist" className="relative">
-            <span className="w-5 h-5 flex items-center justify-center absolute -top-5 left-5 bg-main-500 text-white text-xs font-bold rounded-full">
-              5
-            </span>
-            <i className="bx bx-heart text-4xl"></i>
-          </Link>
-        </li>
-        <li>
-          <Link to="/cart" className="relative">
-            <span className="w-5 h-5 flex items-center justify-center absolute -top-5 left-5 bg-main-500 text-white text-xs font-bold rounded-full">
-              5
-            </span>
-            <i className="bx bx-cart text-4xl"></i>
-          </Link>
-        </li>
+        {navbarIcons.map(icon => (
+          <li key={icon.icon}>
+            <Link to={icon.link} className="relative">
+              <span className="w-5 h-5 flex items-center justify-center absolute -top-5 left-5 bg-main-500 text-white text-xs font-bold rounded-full">
+                5
+              </span>
+              <i className={`bx bx-${icon.icon} text-4xl`}></i>
+            </Link>
+          </li>
+        ))}
       </ul>
+
+      {openNavMenu && <NavigationMenu toggleSidebar={toggleSidebar} />}
     </div>
   );
 };

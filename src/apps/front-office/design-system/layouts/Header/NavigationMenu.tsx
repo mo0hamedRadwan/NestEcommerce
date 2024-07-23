@@ -1,16 +1,23 @@
+import { Link } from "@mongez/react-router";
 import logo from "shared/assets/images/logo.svg";
 import { Input } from "shared/components/ui/input";
 import { Separator } from "shared/components/ui/separator";
 import { bottomHeaderNavbarItems } from "./constant/bottomHeaderData";
 
-const NavigationMenu = () => {
+type NavigationMenuType = {
+  toggleSidebar: () => void;
+};
+
+const NavigationMenu = ({ toggleSidebar }: NavigationMenuType) => {
   return (
     <div className="absolute top-0 left-0 bottom-0 right-0 z-10 bg-black bg-opacity-15">
-      <div className="w-1/2 min-h-full bg-white px-5">
+      <div className="w-1/2 h-full bg-white px-5">
         <div className="flex justify-between items-center p-5">
           <img src={logo} alt="nest logo" className="w-[140px] h-[44px]" />
-          <span className="w-8 h-8 flex justify-center items-center rounded-full bg-main-200">
-            <i className="bx bx-x"></i>
+          <span
+            className="w-8 h-8 flex justify-center items-center rounded-full bg-main-200"
+            onClick={() => toggleSidebar()}>
+            <i className="bx bx-x font-bold"></i>
           </span>
         </div>
         <Separator />
@@ -22,8 +29,10 @@ const NavigationMenu = () => {
         </div>
         <ul className="flex flex-col gap-y-3 p-5">
           {bottomHeaderNavbarItems.map(item => (
-            <li key={item}>
-              <span className="pb-3 block font-bold">{item}</span>
+            <li key={item.label}>
+              <Link to={item.link}>
+                <span className="pb-3 block font-bold">{item.label}</span>
+              </Link>
               <Separator />
             </li>
           ))}

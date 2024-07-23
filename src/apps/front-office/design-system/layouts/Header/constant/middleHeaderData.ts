@@ -8,6 +8,11 @@ export const middleHeaderActions = [
   { name: "Account", href: "/account", iconName: "user" },
 ];
 
+export const navbarIcons = [
+  { icon: "cart", link: "/cart" },
+  { icon: "heart", link: "/wishlist" },
+];
+
 export const middleHeaderCategories = [
   "abc",
   "abc",
