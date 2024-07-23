@@ -1,5 +1,6 @@
 import { Link } from "@mongez/react-router";
-import { useState } from "react";
+// import { useState } from "react";
+import { useWindowScroll } from "apps/front-office/account/hooks";
 import logo from "shared/assets/images/logo.svg";
 import { Input } from "shared/components/ui/input";
 import {
@@ -22,10 +23,12 @@ function capitalize(value: string): string {
 }
 
 const MiddleHeader = () => {
-  const [openMenu, setOpenMenu] = useState(false);
+  const windowScroll = useWindowScroll();
+  // const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <div className="container flex justify-between items-center py-3 lg:py-7">
+    <div
+      className={`container bg-white w-full flex justify-between items-center py-3 lg:py-7 ${windowScroll >= 25 && "sticky top-0 z-50 lg:relative lg:top-auto lg:z-0"}`}>
       <div className="block lg:hidden text-6xl">
         <i className="bx bx-menu"></i>
       </div>
@@ -81,7 +84,7 @@ const MiddleHeader = () => {
 
       <ul className="lg:hidden flex justify-center items-center gap-x-5">
         <li>
-          <Link to="/cart" className="relative">
+          <Link to="/wishlist" className="relative">
             <span className="w-5 h-5 flex items-center justify-center absolute -top-5 left-5 bg-main-500 text-white text-xs font-bold rounded-full">
               5
             </span>

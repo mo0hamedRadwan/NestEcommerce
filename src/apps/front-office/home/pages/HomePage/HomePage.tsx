@@ -6,7 +6,7 @@ export default function HomePage() {
     <>
       <CarouselComponent />
       <Separator />
-      <h1>HomePage</h1>
+      <h1 className="h-[1000px]">HomePage</h1>
     </>
   );
 }
