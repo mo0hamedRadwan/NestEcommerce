@@ -4,7 +4,7 @@ import { topHeaderLanguages, topHeaderLinks } from "./constant/topHeaderData";
 
 const TopHeader = () => {
   return (
-    <div className="container hidden md:flex md:justify-between items-center py-2 text-sm lg:bg-white lg:dark:bg-slate-900 md:bg-main-500 lg:text-black lg:dark:text-slate-100 md:text-white">
+    <div className="container hidden md:flex md:justify-between items-center py-2 text-sm lg:bg-white lg:dark:bg-slate-900 md:bg-main-500 lg:text-black lg:dark:text-white md:text-white">
       <ul className="hidden lg:flex items-center">
         {topHeaderLinks.map((link, index) => (
           <li key={link.name} className="flex items-center">
@@ -28,7 +28,9 @@ const TopHeader = () => {
         <li>
           <p>
             Need help? Call Us:
-            <span className="text-main-500"> + 1800 900</span>
+            <span className="text-main-500 hover:text-main-700 hover:font-bold">
+              + 1800 900
+            </span>
           </p>
         </li>
         <li>

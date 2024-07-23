@@ -69,7 +69,7 @@ const MiddleHeader = () => {
           <Input
             type="text"
             placeholder={MiddleHeaderInputPlacholder}
-            className="2xl:w-[600px] w-[400px] placeholder:text-slate-500 border-none shadow-none focus-visible:ring-0"
+            className="2xl:w-[600px] w-[400px] text-lg placeholder:text-slate-500 border-none shadow-none focus-visible:ring-0"
           />
           <div className="absolute right-4 text-2xl text-slate-500">
             <i className="bx bx-search"></i>
@@ -87,7 +87,7 @@ const MiddleHeader = () => {
             <i className={`bx bx-${action.iconName} text-2xl`}></i>
             <Link
               to={action.href}
-              className="ml-1 text-slate-500 dark:text-slate-100">
+              className="ml-1 text-slate-500 dark:text-slate-200 hover:text-black dark:hover:text-white">
               {action.name}
             </Link>
           </li>

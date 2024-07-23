@@ -11,7 +11,7 @@ type SliderPropsType = {
 
 const Slider = ({ slider }: SliderPropsType) => {
   return (
-    <CarouselItem className="w-full h-full ml-4 relative rounded-3xl">
+    <CarouselItem className="w-full h-full ml-4 relative rounded-3xl text-slate-900">
       <img
         src={slider.img}
         className="absolute w-full h-full top-0 left-0 rounded-3xl"
