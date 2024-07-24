@@ -1,12 +1,12 @@
 import { Link } from "@mongez/react-router";
 import { useState } from "react";
-import { categories } from "./constant/bottomHeaderData";
+import { categories } from "../constant/bottomHeaderData";
 
-const BrowseCatigoriesMenu = () => {
+const BrowseCategoriesMenu = () => {
   const [openSeeMore, setOpenSeeMore] = useState(false);
   return (
     <div
-      className={`absolute top-20 left-8 w-[500px] p-10 z-10 rounded-xl bg-white dark:bg-slate-900 
+      className={`absolute top-20 left-8 w-[500px] p-10 z-10 rounded-xl bg-white dark:bg-slate-800 
       ${openSeeMore ? "h-[600px]" : "h-[450px]"} duration-300
       shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]  dark:shadow-[rgba(255,_255,_255,_0.84)_0px_3px_12px]`}>
       <div className="flex flex-col">
@@ -16,7 +16,7 @@ const BrowseCatigoriesMenu = () => {
             return (
               <li
                 key={index}
-                className="w-[198px] border border-slate-200 rounded-lg px-4 py-2">
+                className="w-[198px] border border-slate-200 dark:border-slate-600 rounded-lg px-4 py-2  hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:hover:shadow-[0_3px_10px_rgb(255,255,255,0.2)]">
                 <Link to={category.link} className="flex items-center gap-x-4">
                   <img
                     src={category.icon}
@@ -68,4 +68,4 @@ const BrowseCatigoriesMenu = () => {
   );
 };
 
-export default BrowseCatigoriesMenu;
+export default BrowseCategoriesMenu;

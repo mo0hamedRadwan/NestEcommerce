@@ -24,6 +24,7 @@ export const bottomHeaderNavbarItems = [
   // { label: "Pages", link: "" },
 ];
 
+// Categories Menu
 export const categories = [
   { icon: icon1, label: "item 1", link: "/item1" },
   { icon: icon2, label: "item 1", link: "/item1" },
@@ -41,6 +42,7 @@ export const categories = [
   { icon: icon14, label: "item 1", link: "/item1" },
 ];
 
+// Mega Menu
 export const megaDropMenu = [
   {
     title: "Fruit & Vegetables",

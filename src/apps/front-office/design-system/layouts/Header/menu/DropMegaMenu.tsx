@@ -1,11 +1,11 @@
 import { Link } from "@mongez/react-router";
 import bannerMenu from "assets/images/banner/banner-menu.png";
 import { Button } from "shared/components/ui/button";
-import { megaDropMenu } from "./constant/bottomHeaderData";
+import { megaDropMenu } from "../constant/bottomHeaderData";
 
 const DropMegaMenu = () => {
   return (
-    <div className="hidden absolute left-0 container mt-5 p-9 z-10 w-full group-hover:flex justify-between bg-white dark:bg-slate-900 rounded-xl  shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
+    <div className="hidden absolute left-0 container mt-5 p-9 z-10 w-full group-hover:flex justify-between bg-white dark:bg-slate-800 rounded-xl  shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
       {megaDropMenu.map((megaDropHeader, index) => (
         <div key={megaDropHeader.title + index}>
           <h2 className="text-xl text-main-500 font-bold mb-4">

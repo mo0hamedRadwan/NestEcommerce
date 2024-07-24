@@ -2,12 +2,12 @@ import { Link } from "@mongez/react-router";
 import { useState } from "react";
 import { Button } from "shared/components/ui/button";
 import { useDarkMode, useWindowScroll } from "../../hooks";
-import BrowseCatigoriesMenu from "./BrowseCatigoriesMenu";
 import { bottomHeaderNavbarItems } from "./constant/bottomHeaderData";
-import DropMegaMenu from "./DropMegaMenu";
+import BrowseCatigoriesMenu from "./menu/BrowseCategoriesMenu";
+import DropMegaMenu from "./menu/DropMegaMenu";
 
 const BottomHeader = () => {
-  const [openCategoriesMenu, setOpenCategoriesMenu] = useState(true);
+  const [openCategoriesMenu, setOpenCategoriesMenu] = useState(false);
   const windowScroll = useWindowScroll();
   const { theme, toggleTheme } = useDarkMode();
 

@@ -41,3 +41,13 @@ export const socialMediaLinks = [
   { name: "pinterest", link: "https://www.pinterest.com" },
   { name: "youtube", link: "https://www.youtube.com" },
 ];
+
+// Account menu
+export const accountMenu = [
+  { name: "My Account", link: "/account" },
+  { name: "Addresses", link: "/addresses" },
+  { name: "Orders", link: "/orders" },
+  { name: "Wishlist", link: "/wishlist" },
+  { name: "Setting", link: "/setting" },
+  { name: "Logout", link: "/logout" },
+];

@@ -2,8 +2,8 @@ import { Link } from "@mongez/react-router";
 import logo from "shared/assets/images/logo.svg";
 import { Input } from "shared/components/ui/input";
 import { Separator } from "shared/components/ui/separator";
-import { bottomHeaderNavbarItems } from "./constant/bottomHeaderData";
-import { socialMediaLinks, websiteInfo } from "./constant/middleHeaderData";
+import { bottomHeaderNavbarItems } from "../constant/bottomHeaderData";
+import { socialMediaLinks, websiteInfo } from "../constant/middleHeaderData";
 
 type NavigationMenuType = {
   toggleSidebar: () => void;

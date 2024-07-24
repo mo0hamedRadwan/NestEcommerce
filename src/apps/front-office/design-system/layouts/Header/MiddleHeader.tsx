@@ -19,7 +19,9 @@ import {
   middleHeaderCategories,
   navbarIcons,
 } from "./constant/middleHeaderData";
-import NavigationMenu from "./NavigationMenu";
+import AccountMenu from "./menu/AccountMenu";
+import CartMenu from "./menu/CartMenu";
+import NavigationMenu from "./menu/NavigationMenu";
 
 function capitalize(value: string): string {
   return value.charAt(0).toUpperCase() + value.slice(1);
@@ -77,21 +79,25 @@ const MiddleHeader = () => {
         </div>
       </div>
       <ul className="hidden lg:flex items-center gap-x-2 lx:gap-x-4">
-        {middleHeaderActions.map(action => (
-          <li key={action.name} className="relative">
-            {action.name !== "Account" && (
-              <span className="w-5 h-5 flex items-center justify-center absolute -top-1 left-3 bg-main-500 text-white text-xs font-bold rounded-full">
-                5
-              </span>
-            )}
-            <i className={`bx bx-${action.iconName} text-2xl`}></i>
-            <Link
-              to={action.href}
-              className="ml-1 text-slate-500 dark:text-slate-200 hover:text-black dark:hover:text-white">
-              {action.name}
-            </Link>
-          </li>
-        ))}
+        {middleHeaderActions.map(action => {
+          return (
+            <li key={action.name} className="relative pb-4  group">
+              {action.name === "Account" && <AccountMenu />}
+              {action.name === "Cart" && <CartMenu />}
+              {action.name !== "Account" && (
+                <span className="w-5 h-5 flex items-center justify-center absolute -top-1 left-3 bg-main-500 text-white text-xs font-bold rounded-full">
+                  5
+                </span>
+              )}
+              <i className={`bx bx-${action.iconName} text-2xl`}></i>
+              <Link
+                to={action.href}
+                className="ml-1 text-slate-500 dark:text-slate-200 hover:text-black dark:hover:text-white">
+                {action.name}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
 
       <ul className="lg:hidden flex justify-center items-center gap-x-5">
