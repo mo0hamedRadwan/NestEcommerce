@@ -34,7 +34,7 @@ const TopHeader = () => {
           </p>
         </li>
         <li>
-          <select className="text-black">
+          <select className="text-black font-semibold">
             {topHeaderLanguages.map(lang => (
               <option value={lang.code} key={lang.code}>
                 {lang.name}
