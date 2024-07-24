@@ -20,14 +20,14 @@ export const SwiperSlidersData = [
   },
   {
     img: slider3,
-    header1: "Fresh Vegetables With",
+    header1: "Fresh Coffee",
     header2: "Big discount",
     text: "Save up to 50% off on your first order",
     dir: "left",
   },
   {
     img: slider4,
-    header1: "Fresh Milk",
+    header1: "Fresh Jaco",
     header2: "Big discount",
     text: "Save up to 50% off on your first order",
     dir: "left",

@@ -1,10 +1,13 @@
 import { Link } from "@mongez/react-router";
+import { useState } from "react";
 import { Button } from "shared/components/ui/button";
 import { useDarkMode, useWindowScroll } from "../../hooks";
+import BrowseCatigoriesMenu from "./BrowseCatigoriesMenu";
 import { bottomHeaderNavbarItems } from "./constant/bottomHeaderData";
 import DropMegaMenu from "./DropMegaMenu";
 
 const BottomHeader = () => {
+  const [openCategoriesMenu, setOpenCategoriesMenu] = useState(true);
   const windowScroll = useWindowScroll();
   const { theme, toggleTheme } = useDarkMode();
 
@@ -16,11 +19,18 @@ const BottomHeader = () => {
       className={`container relative bg-white py-2 dark:bg-slate-900 w-full hidden lg:flex justify-between items-center 
         ${windowScroll >= 150 && "sticky top-0 z-50"}`}>
       <div className="flex justify-between items-center gap-x-8">
-        <Button className="bg-main-500 hover:bg-main-700 active:bg-main-700 border-none outline-none focus-visible:ring-0">
+        <Button
+          className="bg-main-500 hover:bg-main-700 active:bg-main-700 border-none outline-none focus-visible:ring-0"
+          onClick={() => setOpenCategoriesMenu(!openCategoriesMenu)}>
           <i className="bx bx-category"></i>
           <span className="mx-2">Browse All Categories</span>
-          <i className="bx bx-chevron-down"></i>
+          {openCategoriesMenu ? (
+            <i className="bx bx-chevron-up"></i>
+          ) : (
+            <i className="bx bx-chevron-down"></i>
+          )}
         </Button>
+        {openCategoriesMenu && <BrowseCatigoriesMenu />}
         <ul className="flex items-center gap-x-6 xl:gap-x-8">
           <li className="text-base font-bold hover:text-main-700 cursor-pointer">
             <i className="bx bxs-hot text-main-500"></i>
