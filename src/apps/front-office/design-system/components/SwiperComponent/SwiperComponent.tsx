@@ -20,7 +20,7 @@ export default function SwiperComponent() {
         spaceBetween={30}
         centeredSlides={true}
         effect={"fade"}
-        // loop={true}
+        loop={true}
         autoplay={{
           delay: 2000,
           disableOnInteraction: false,
