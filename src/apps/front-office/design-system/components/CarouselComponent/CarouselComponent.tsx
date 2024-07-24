@@ -6,7 +6,7 @@ import {
   CarouselPrevious,
 } from "shared/components/ui/carousel";
 
-import { CarouselSlidersData } from "./CarouselData";
+import { CarouselSlidersData } from "../SwiperComponent/SwiperData";
 import Slider from "./Slider";
 
 export default function CarouselComponent() {

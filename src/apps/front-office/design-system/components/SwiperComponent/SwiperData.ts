@@ -3,7 +3,7 @@ import slider2 from "shared/assets/images/carousel/slider-2.png";
 import slider3 from "shared/assets/images/carousel/slider-3.png";
 import slider4 from "shared/assets/images/carousel/slider-4.png";
 
-export const CarouselSlidersData = [
+export const SwiperSlidersData = [
   {
     img: slider1,
     header1: "Don’t miss amazing",
