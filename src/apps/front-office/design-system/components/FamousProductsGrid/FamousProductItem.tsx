@@ -8,10 +8,8 @@ export default function FamousProductItem({
   product,
 }: famousProductItemPropsType) {
   return (
-    <div className="flex gap-x-5">
-      <div className="">
-        <img src={product.img} alt="" className="w-40 h-28" />
-      </div>
+    <div className="flex gap-x-5 rounded-lg duration-300 hover:-translate-y-2">
+      <img src={product.img} alt="" className="w-40 h-28" />
       <div className="flex flex-col">
         <h3 className="text-base font-bold">{product.name}</h3>
 
