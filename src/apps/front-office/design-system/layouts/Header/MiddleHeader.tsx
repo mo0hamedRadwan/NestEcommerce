@@ -28,14 +28,22 @@ function capitalize(value: string): string {
 }
 
 const MiddleHeader = () => {
+  const [categoryFilter, setCategoryFilter] = useState("");
+
   const windowScroll = useWindowScroll();
   const [openNavMenu, setOpenNavMenu] = useState(false);
   // const theme = themeAtom.useValue();
   const { theme, toggleTheme } = useDarkMode();
 
   const toggleSidebar = () => {
-    console.log("toggleSidebar");
+    // console.log("toggleSidebar");
     setOpenNavMenu(!openNavMenu);
+  };
+
+  const handleChangeCategory = (value: string) => {
+    console.log("Category Filter", categoryFilter);
+    console.log("Category Filter", value);
+    setCategoryFilter(value);
   };
 
   return (
@@ -52,7 +60,7 @@ const MiddleHeader = () => {
         />
       </div>
       <div className="hidden lg:flex items-center border border-main-500 rounded-lg p-2">
-        <Select>
+        <Select onValueChange={handleChangeCategory}>
           <SelectTrigger className="hidden xl:block xl:w-[180px] font-bold border-none shadow-none focus:ring-0">
             <SelectValue placeholder={MiddleHeaderSelectPlacholder} />
           </SelectTrigger>
