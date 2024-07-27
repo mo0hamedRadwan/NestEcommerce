@@ -1,13 +1,14 @@
 // import CarouselComponent from "design-system/components/CarouselComponent";
 
-import PopularProducts from "apps/front-office/design-system/components/PopularProducts";
+import FeaturedCategoriesComponent from "apps/front-office/design-system/components/FeaturedCategoiesComponent/FeaturedCategoriesComponent";
 
 export default function HomePage() {
   return (
     <>
       {/* <CarouselComponent /> */}
       {/* <SwiperComponent /> */}
-      <PopularProducts />
+      <FeaturedCategoriesComponent />
+      {/* <PopularProducts /> */}
       {/* <Separator /> */}
       {/* <DealsComponent /> */}
       {/* <FamousProductsGrid /> */}

@@ -1,1 +1,1 @@
-export { default } from "./FeaturedCategoiesComponent";
+export { default } from "./FeaturedCategoriesComponent";
