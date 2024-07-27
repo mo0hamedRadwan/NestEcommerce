@@ -8,7 +8,7 @@ import { footerColumnsLinks, websiteContact } from "./FooterData";
 export default function MiddleFooter() {
   return (
     <div className="flex justify-between items-start flex-wrap lg:flex-nowrap gap-5 py-10">
-      <div className="max-w-[280px] flex flex-col">
+      <div className="max-w-72 flex flex-col">
         <img src={logo} alt="website logo" className="w-52 h-16" />
         <p className="mt-3">Awesome grocery store website template</p>
         <ul className="mt-8 flex flex-col gap-y-2">
@@ -24,7 +24,7 @@ export default function MiddleFooter() {
       </div>
 
       {footerColumnsLinks.map(columnLinks => (
-        <div key={columnLinks.name} className="flex flex-col gap-y-5">
+        <div key={columnLinks.name} className="min-w-40 flex flex-col gap-y-5">
           <h2 className="text-2xl font-bold">{columnLinks.name}</h2>
           <ul className="flex flex-col gap-y-2">
             {columnLinks.links.map(link => (
