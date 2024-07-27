@@ -39,7 +39,7 @@ export function CopyrightFooter() {
             {socialMediaLinks.map(socialLink => (
               <li
                 key={socialLink.name}
-                className="w-8 h-8 flex justify-center items-center bg-main-500 text-white rounded-full">
+                className="w-8 h-8 flex justify-center items-center bg-main-500 hover:bg-main-700 text-white rounded-full">
                 <Link to={socialLink.link}>
                   <i className={`bx bxl-${socialLink.name}`}></i>
                 </Link>

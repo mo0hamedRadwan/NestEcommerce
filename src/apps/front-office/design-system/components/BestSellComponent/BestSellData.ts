@@ -1,7 +1,8 @@
-import img1 from "assets/images/banner/banner-5.png";
-import img2 from "assets/images/banner/banner-6.png";
-import img3 from "assets/images/banner/banner-7.png";
-import img4 from "assets/images/banner/banner-8.png";
+import img1 from "assets/images/products/product-1-1.jpg";
+import img2 from "assets/images/products/product-2-1.jpg";
+import img3 from "assets/images/products/product-3-1.jpg";
+import img4 from "assets/images/products/product-4-1.jpg";
+
 import { Product } from "../../types";
 
 const product1: Product = {
@@ -42,9 +43,6 @@ const product4: Product = {
   venderBy: "HW Group",
 };
 
-export const DealsData = [
-  { product: product1, date: new Date(2024, 0, 0) },
-  { product: product2, date: new Date(2025, 0, 15) },
-  { product: product3, date: new Date(2025, 5, 1) },
-  { product: product4, date: new Date(2025, 3, 12) },
-];
+export const featuredData = [product1, product2, product3, product4];
+export const popularData = [product1, product2, product3, product4];
+export const newAddedData = [product1, product2, product3, product4];

@@ -30,7 +30,7 @@ export default function SwiperComponent() {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper  h-[350px] xl:h-[540px] mt-5">
+        className="mySwiper  h-[350px] xl:h-[540px] my-5">
         {SwiperSlidersData.map((slide, index) => (
           <SwiperSlide
             key={index}

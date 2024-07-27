@@ -3,7 +3,7 @@ import { featuresBanners } from "./FeaturedCategoriesData";
 
 export default function FeaturedCategoriesComponent() {
   return (
-    <div className="py-5 flex flex-col gap-y-5">
+    <div className="my-10 flex flex-col gap-y-5">
       {/* Tab and slides */}
       <div>
         <h2 className="text-3xl font-bold">Featured Categories</h2>

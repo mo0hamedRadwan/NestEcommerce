@@ -20,7 +20,9 @@ export default function DealsComponent() {
           <li
             key={index}
             className={`relative ${index === 3 && "sm:hidden xl:block"} ${index === 2 && "sm:hidden lg:block"}`}>
-            <DealCard deal={deal} />
+            <Link to="/product/:id">
+              <DealCard deal={deal} />
+            </Link>
           </li>
         ))}
       </ul>

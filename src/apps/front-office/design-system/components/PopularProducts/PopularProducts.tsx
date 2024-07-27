@@ -14,11 +14,11 @@ import VegetablesContent from "./VegetablesContent";
 
 export default function PopularProducts() {
   return (
-    <div className="relative flex flex-row-reverse py-5">
-      <h2 className="absolute top-5 left-0 text-3xl font-bold">
+    <div className="relative flex flex-row-reverse my-10">
+      <h2 className="absolute top-0 left-0 text-3xl font-bold">
         Popular Products
       </h2>
-      <Tabs defaultValue="All" className="w-full border border-red-500">
+      <Tabs defaultValue="All" className="w-full">
         <TabsList className="bg-transparent w-full flex justify-end">
           <TabsTrigger value="All">All</TabsTrigger>
           <TabsTrigger value="Milks__Dairies">Milks & Dairies</TabsTrigger>
