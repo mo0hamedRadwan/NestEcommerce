@@ -1,5 +1,5 @@
 import { Link } from "@mongez/react-router";
-import { Product } from "../../types";
+import { Product } from "design-system/types";
 import FamousProductItem from "./FamousProductItem";
 
 type famousProductsColumnPropsType = {
@@ -19,7 +19,7 @@ export default function FamousProductsColumn({
       </h3>
       <ul className="flex flex-col gap-y-7">
         {products.map(product => (
-          <li key={title + "-" + product.name}>
+          <li key={title + "-" + product.id}>
             <Link to="/product/:id">
               <FamousProductItem product={product} />
             </Link>

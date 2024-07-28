@@ -1,5 +1,5 @@
-import { Product } from "../../types";
-import ViewRating from "../ui/ViewRating";
+import ViewRating from "design-system/components/ui/ViewRating";
+import { Product } from "design-system/types";
 
 type famousProductItemPropsType = {
   product: Product;

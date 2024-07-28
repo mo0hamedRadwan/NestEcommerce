@@ -2,7 +2,7 @@ import img1 from "assets/images/banner/banner-5.png";
 import img2 from "assets/images/banner/banner-6.png";
 import img3 from "assets/images/banner/banner-7.png";
 import img4 from "assets/images/banner/banner-8.png";
-import { Product } from "../../types";
+import { Product } from "design-system/types";
 
 const product1: Product = {
   id: 1,

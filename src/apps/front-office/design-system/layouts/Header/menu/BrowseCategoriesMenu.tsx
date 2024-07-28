@@ -1,9 +1,11 @@
 import { Link } from "@mongez/react-router";
+import categoriesAtom from "apps/front-office/home/atoms/categoriesAtom";
 import { useState } from "react";
-import { categories } from "../constant/bottomHeaderData";
 
 const BrowseCategoriesMenu = () => {
   const [openSeeMore, setOpenSeeMore] = useState(false);
+  const categories = categoriesAtom.getCategories();
+
   return (
     <div
       className={`absolute top-20 left-8 w-[500px] p-10 z-10 rounded-xl bg-white dark:bg-slate-800 
@@ -17,14 +19,16 @@ const BrowseCategoriesMenu = () => {
               <li
                 key={index}
                 className="w-[198px] border border-slate-200 dark:border-slate-600 rounded-lg px-4 py-2  hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:hover:shadow-[0_3px_10px_rgb(255,255,255,0.2)]">
-                <Link to={category.link} className="flex items-center gap-x-4">
+                <Link
+                  to={`/category/${category.id}`}
+                  className="flex items-center gap-x-4">
                   <img
-                    src={category.icon}
+                    src={category.img}
                     alt="category icon"
                     className="w-8 h-8"
                   />
-                  <h3 className="text-base font-bold text-slate-600 dark:text-slate-100">
-                    {category.label}
+                  <h3 className="text-sm font-bold text-slate-600 dark:text-slate-100">
+                    {category.name}
                   </h3>
                 </Link>
               </li>
@@ -51,18 +55,20 @@ const BrowseCategoriesMenu = () => {
             ))}
           </ul>
         )} */}
-        <button
-          className="mt-8 text-xl flex justify-center items-center gap-x-2"
-          onClick={() => setOpenSeeMore(!openSeeMore)}>
-          <span className="text-main-500 text-2xl">
-            {openSeeMore ? (
-              <i className="bx bx-minus-circle"></i>
-            ) : (
-              <i className="bx bx-plus-circle"></i>
-            )}
-          </span>
-          <span>See {openSeeMore ? "less" : "more"}</span>
-        </button>
+        {categories.length > 10 && (
+          <button
+            className="mt-8 text-xl flex justify-center items-center gap-x-2"
+            onClick={() => setOpenSeeMore(!openSeeMore)}>
+            <span className="text-main-500 text-2xl">
+              {openSeeMore ? (
+                <i className="bx bx-minus-circle"></i>
+              ) : (
+                <i className="bx bx-plus-circle"></i>
+              )}
+            </span>
+            <span>See {openSeeMore ? "less" : "more"}</span>
+          </button>
+        )}
       </div>
     </div>
   );

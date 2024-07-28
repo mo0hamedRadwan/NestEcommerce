@@ -10,9 +10,9 @@ export function formatTime(time: number) {
   // const Seconds = seconds < 9 ? "0" + seconds : "" + seconds;
 
   return [
-    { timeType: "Days", number: days < 9 ? "0" + days : "" + days },
-    { timeType: "Hours", number: hours < 9 ? "0" + hours : "" + hours },
-    { timeType: "Mins", number: minutes < 9 ? "0" + minutes : "" + minutes },
-    { timeType: "Sec", number: seconds < 9 ? "0" + seconds : "" + seconds },
+    { timeType: "Days", number: `${days < 9 ? "0" : ""}${days}` },
+    { timeType: "Hours", number: `${hours < 9 ? "0" : ""}${hours}` },
+    { timeType: "Mins", number: `${minutes < 9 ? "0" : ""}${minutes}` },
+    { timeType: "Sec", number: `${seconds < 9 ? "0" : ""}${seconds}` },
   ];
 }

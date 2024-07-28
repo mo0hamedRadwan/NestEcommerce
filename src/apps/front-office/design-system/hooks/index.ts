@@ -24,7 +24,7 @@ export function useWindowScroll() {
 }
 
 /**
- * the purpose of this hook is get current theme and toggle theme to change theme
+ * the purpose of this hook is get current theme and toggle theme function
  */
 
 export function useDarkMode() {

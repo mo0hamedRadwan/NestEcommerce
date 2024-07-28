@@ -1,4 +1,4 @@
-import { ProductCard } from "../ui/ProductCard";
+import { ProductCard } from "design-system/components/ui/ProductCard";
 import { featuredData } from "./BestSellData";
 
 export default function FeaturedContent() {

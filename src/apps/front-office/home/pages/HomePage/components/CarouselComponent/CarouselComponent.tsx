@@ -17,7 +17,7 @@ export default function CarouselComponent() {
           delay: 2000,
         }),
       ]}
-      className="w-[calc(100% - 40px)]  h-[300px] md:h-[450px] xl:h-[700px] m-6 rounded-3xl">
+      className="w-[calc(100%-40px)]  h-[300px] md:h-[450px] xl:h-[700px] m-6 rounded-3xl">
       <CarouselContent className="w-full h-[300px] md:h-[450px] xl:h-[700px] rounded-3xl">
         {CarouselSlidersData.map(slider => (
           <Slider slider={slider} key={slider.header1}></Slider>

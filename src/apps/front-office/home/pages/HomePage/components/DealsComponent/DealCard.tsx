@@ -1,6 +1,6 @@
-import { useCountDown } from "../../hooks";
-import { Product } from "../../types";
-import ViewRating from "../ui/ViewRating";
+import ViewRating from "design-system/components/ui/ViewRating";
+import { useCountDown } from "design-system/hooks";
+import { Product } from "design-system/types";
 
 type DealCardPropsType = {
   deal: {
@@ -21,7 +21,7 @@ export default function DealCard({ deal }: DealCardPropsType) {
         alt="daal product image"
         className="rounded-xl"
       />
-      <div className="flex items-center gap-x-5 absolute left-5 bottom-44">
+      <div className="flex items-center gap-x-5 absolute left-1/2 -translate-x-1/2 bottom-44">
         {remainderTime.map(time => (
           <div
             key={time.timeType}

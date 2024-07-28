@@ -3,7 +3,7 @@ import img2 from "assets/images/products/product-2-1.jpg";
 import img3 from "assets/images/products/product-3-1.jpg";
 import img4 from "assets/images/products/product-4-1.jpg";
 
-import { Product } from "../../types";
+import { Product } from "../../../../../design-system/types";
 
 const product1: Product = {
   id: 1,

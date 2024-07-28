@@ -9,14 +9,14 @@ export default function FeaturedCategoriesComponent() {
         <h2 className="text-3xl font-bold">Featured Categories</h2>
       </div>
 
-      <ul className="flex justify-between items-center flex-wrap md:flex-nowrap gap-5  text-slate-900">
+      <ul className="flex justify-between items-center flex-wrap md:flex-nowrap gap-5  text-slate-900 ">
         {featuresBanners.map((banner, index) => (
           <li
             key={banner.text1}
-            className={`relative min-w-300 ${index === 2 && "hidden lg:block"}`}>
+            className={`relative min-w-300 ${index === 2 ? "hidden lg:block" : ""} group`}>
             <img src={banner.img} alt="" className="rounded-lg" />
             <div className="absolute w-80 md:w-52 xl:w-80  top-10 left-10">
-              <h2 className="text-3xl md:text-lg xl:text-xl 2xl:text-3xl font-semibold mb-10 md:mb-5 xl:mb-10">
+              <h2 className="text-3xl md:text-lg xl:text-xl 2xl:text-3xl font-semibold mb-10 md:mb-5 xl:mb-10  duration-300 group-hover:-translate-y-2">
                 {banner.text1}
                 <br />
                 {banner.text2}

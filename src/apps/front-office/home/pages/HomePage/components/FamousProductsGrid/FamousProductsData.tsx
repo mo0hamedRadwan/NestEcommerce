@@ -1,9 +1,10 @@
 import img1 from "assets/images/thumbnail/thumbnail-1.jpg";
 import img2 from "assets/images/thumbnail/thumbnail-2.jpg";
 import img3 from "assets/images/thumbnail/thumbnail-3.jpg";
-import { Product } from "../../types";
+import { Product } from "../../../../../design-system/types";
 
 const product1: Product = {
+  id: 1,
   name: "Nestle Original Coffee-Mate Coffee Creamer",
   img: img1,
   newPrice: 32.5,
@@ -11,6 +12,7 @@ const product1: Product = {
   rating: 4,
 };
 const product2: Product = {
+  id: 2,
   name: "Nestle Original Coffee-Mate Coffee Creamer",
   img: img2,
   newPrice: 32.5,
@@ -18,6 +20,7 @@ const product2: Product = {
   rating: 4.5,
 };
 const product3: Product = {
+  id: 3,
   name: "Nestle Original Coffee-Mate Coffee Creamer",
   img: img3,
   newPrice: 32.5,

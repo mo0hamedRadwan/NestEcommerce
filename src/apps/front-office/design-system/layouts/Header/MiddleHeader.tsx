@@ -1,49 +1,24 @@
 import { Link } from "@mongez/react-router";
-// import { useState } from "react";
 import { useState } from "react";
 import logo from "shared/assets/images/logo.svg";
-import { Input } from "shared/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "shared/components/ui/select";
-import { Separator } from "shared/components/ui/separator";
 import { useDarkMode, useWindowScroll } from "../../hooks";
-import {
-  MiddleHeaderInputPlacholder,
-  MiddleHeaderSelectPlacholder,
-  middleHeaderActions,
-  middleHeaderCategories,
-  navbarIcons,
-} from "./constant/middleHeaderData";
+import { middleHeaderActions, navbarIcons } from "./constant/middleHeaderData";
 import AccountMenu from "./menu/AccountMenu";
 import CartMenu from "./menu/CartMenu";
 import NavigationMenu from "./menu/NavigationMenu";
-
-function capitalize(value: string): string {
-  return value.charAt(0).toUpperCase() + value.slice(1);
-}
+import SearchFormInMiddleHeader from "./SearchFormInMiddleHeader";
 
 const MiddleHeader = () => {
-  const [categoryFilter, setCategoryFilter] = useState("");
+  // to handle login user
+  const [isLogin, setIsLogin] = useState(true);
+  const [openNavMenu, setOpenNavMenu] = useState<boolean>(false);
 
   const windowScroll = useWindowScroll();
-  const [openNavMenu, setOpenNavMenu] = useState(false);
-  // const theme = themeAtom.useValue();
   const { theme, toggleTheme } = useDarkMode();
 
   const toggleSidebar = () => {
     // console.log("toggleSidebar");
     setOpenNavMenu(!openNavMenu);
-  };
-
-  const handleChangeCategory = (value: string) => {
-    console.log("Category Filter", categoryFilter);
-    console.log("Category Filter", value);
-    setCategoryFilter(value);
   };
 
   return (
@@ -59,50 +34,40 @@ const MiddleHeader = () => {
           className="w-[150px] sm:min-w-[180px] h-[45px] sm:h-[55px]"
         />
       </div>
-      <div className="hidden lg:flex items-center border border-main-500 rounded-lg p-2">
-        <Select onValueChange={handleChangeCategory}>
-          <SelectTrigger className="hidden xl:block xl:w-[180px] font-bold border-none shadow-none focus:ring-0">
-            <SelectValue placeholder={MiddleHeaderSelectPlacholder} />
-          </SelectTrigger>
-          <SelectContent className="hidden xl:block xl:w-[180px] max-h-[250px] bg-white">
-            <Input className="my-1 mx-2 w-[90px] xl:w-[150px] focus-visible:ring-0" />
-            {middleHeaderCategories.map((category, index) => (
-              <SelectItem value={category} key={category + index}>
-                {/* {category.charAt(0).toUpperCase() + category.slice(1)} */}
-                {capitalize(category)}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <Separator orientation="vertical" className="h-5" />
-        <div className="relative flex items-center">
-          <Input
-            type="text"
-            placeholder={MiddleHeaderInputPlacholder}
-            className="2xl:w-[600px] w-[400px] text-lg placeholder:text-slate-500 border-none shadow-none focus-visible:ring-0"
-          />
-          <div className="absolute right-4 text-2xl text-slate-500">
-            <i className="bx bx-search"></i>
-          </div>
-        </div>
-      </div>
+
+      <SearchFormInMiddleHeader />
+
       <ul className="hidden lg:flex items-center gap-x-2 lx:gap-x-4">
         {middleHeaderActions.map(action => {
           return (
             <li key={action.name} className="relative pb-4  group">
-              {action.name === "Account" && <AccountMenu />}
-              {action.name === "Cart" && <CartMenu />}
-              {action.name !== "Account" && (
+              {action.name === "Account" && isLogin && <AccountMenu />}
+              {action.name === "Cart" && isLogin && <CartMenu />}
+              {action.name !== "Account" && isLogin && (
                 <span className="w-5 h-5 flex items-center justify-center absolute -top-1 left-3 bg-main-500 text-white text-xs font-bold rounded-full">
                   5
                 </span>
               )}
-              <i className={`bx bx-${action.iconName} text-2xl`}></i>
-              <Link
-                to={action.href}
-                className="ml-1 text-slate-500 dark:text-slate-200 hover:text-black dark:hover:text-white">
-                {action.name}
-              </Link>
+
+              {action.name === "Account" && !isLogin ? (
+                <>
+                  <i className="bx bx-door-open text-2xl"></i>
+                  <Link
+                    to="/login"
+                    className="ml-1 text-slate-500 dark:text-slate-200 hover:text-black dark:hover:text-white">
+                    Login
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <i className={`bx bx-${action.iconName} text-2xl`}></i>
+                  <Link
+                    to={action.href}
+                    className="ml-1 text-slate-500 dark:text-slate-200 hover:text-black dark:hover:text-white">
+                    {action.name}
+                  </Link>
+                </>
+              )}
             </li>
           );
         })}

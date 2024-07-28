@@ -7,7 +7,7 @@ export default function FamousProductsGrid() {
       {famousProductsData.map((column, index) => (
         <li
           key={column.title}
-          className={`${index === 3 && "sm:hidden 2xl:block"} ${index === 2 && "sm:hidden lg:block"}`}>
+          className={`${index === 3 ? "sm:hidden 2xl:block" : ""} ${index === 2 ? "sm:hidden lg:block" : ""}`}>
           <FamousProductsColumn
             title={column.title}
             products={column.products}

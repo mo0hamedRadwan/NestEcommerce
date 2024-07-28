@@ -8,6 +8,8 @@ import DropMegaMenu from "./menu/DropMegaMenu";
 
 const BottomHeader = () => {
   const [openCategoriesMenu, setOpenCategoriesMenu] = useState(false);
+  const [activeNavItem, setActiveNavItem] = useState("Home");
+
   const windowScroll = useWindowScroll();
   const { theme, toggleTheme } = useDarkMode();
 
@@ -39,7 +41,7 @@ const BottomHeader = () => {
           {bottomHeaderNavbarItems.map(item => (
             <li
               key={item.label}
-              className="text-base font-bold hover:text-main-700 cursor-pointer group py-5">
+              className={`text-base font-bold hover:text-main-700 cursor-pointer group py-5 ${activeNavItem === item.label ? "text-main-500" : ""}`}>
               {item.label === "Mega menu" ? (
                 <div className="">
                   <span>{item.label}</span>
@@ -47,7 +49,11 @@ const BottomHeader = () => {
                   <DropMegaMenu />
                 </div>
               ) : (
-                <Link to={item.link}>{item.label}</Link>
+                <Link
+                  to={item.link}
+                  onClick={() => setActiveNavItem(item.label)}>
+                  {item.label}
+                </Link>
               )}
             </li>
           ))}

@@ -1,13 +1,10 @@
-// import CarouselComponent from "design-system/components/CarouselComponent";
-
-import BestSellComponent from "apps/front-office/design-system/components/BestSellComponent";
-import DealsComponent from "apps/front-office/design-system/components/DealsComponent";
-import FamousProductsGrid from "apps/front-office/design-system/components/FamousProductsGrid";
-import FeaturedCategoriesComponent from "apps/front-office/design-system/components/FeaturedCategoiesComponent/FeaturedCategoriesComponent";
-import FeaturesComponent from "apps/front-office/design-system/components/FeaturesComponent";
-import PopularProducts from "apps/front-office/design-system/components/PopularProducts";
-import SwiperComponent from "apps/front-office/design-system/components/SwiperComponent";
 import { Separator } from "shared/components/ui/separator";
+import DealsComponent from "./components/DealsComponent";
+import FamousProductsGrid from "./components/FamousProductsGrid";
+import FeaturedCategoriesComponent from "./components/FeaturedCategoiesComponent/FeaturedCategoriesComponent";
+import FeaturesComponent from "./components/FeaturesComponent";
+import PopularProducts from "./components/PopularProducts";
+import SwiperComponent from "./components/SwiperComponent";
 
 export default function HomePage() {
   return (
@@ -16,7 +13,7 @@ export default function HomePage() {
       <SwiperComponent />
       <FeaturedCategoriesComponent />
       <PopularProducts />
-      <BestSellComponent />
+      {/* <BestSellComponent /> */}
       <DealsComponent />
       <FamousProductsGrid />
       <FeaturesComponent />

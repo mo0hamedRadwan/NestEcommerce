@@ -4,13 +4,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "shared/components/ui/tabs";
-import AllProductContent from "./AllProductsContent";
-import Coffes__TeasContent from "./Coffes__TeasContent";
-import FruitsContent from "./FruitsContent";
-import MeatsContent from "./MeatsContent";
-import Milks__DairiesContent from "./Milks__DairiesContent";
-import Pet_FoodsContent from "./Pet_FoodsContent";
-import VegetablesContent from "./VegetablesContent";
+import PopularProductsContent from "./PopularProductsContent";
 
 export default function PopularProducts() {
   return (
@@ -29,25 +23,25 @@ export default function PopularProducts() {
           <TabsTrigger value="Fruits">Fruits</TabsTrigger>
         </TabsList>
         <TabsContent value="All" className="py-5">
-          <AllProductContent />
+          <PopularProductsContent />
         </TabsContent>
         <TabsContent value="Milks__Dairies" className="py-5">
-          <Milks__DairiesContent />
+          <PopularProductsContent categoryId={1} />
         </TabsContent>
         <TabsContent value="Coffes__Teas" className="py-5">
-          <Coffes__TeasContent />
+          <PopularProductsContent categoryId={2} />
         </TabsContent>
         <TabsContent value="Pet_Foods" className="py-5">
-          <Pet_FoodsContent />
+          <PopularProductsContent categoryId={3} />
         </TabsContent>
         <TabsContent value="Meats" className="py-5">
-          <MeatsContent />
+          <PopularProductsContent categoryId={4} />
         </TabsContent>
         <TabsContent value="Vegetables" className="py-5">
-          <VegetablesContent />
+          <PopularProductsContent categoryId={5} />
         </TabsContent>
         <TabsContent value="Fruits" className="py-5">
-          <FruitsContent />
+          <PopularProductsContent categoryId={6} />
         </TabsContent>
       </Tabs>
     </div>
